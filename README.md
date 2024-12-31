@@ -39,10 +39,14 @@ Building on the Git-10M dataset, we developed Text2Earth, a 1.3 billion paramete
 
 - **Zero-Shot text2image generation**:
 Text2Earth can generate specific image content based on user-free text input, without scene-specific fine-tuning or retraining.
-  <video width="320" height="240" controls>
-  <source src="images/result.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>
+  <br>
+  <div align="center">
+    <img src="images/zero_result.png" width="800"/>
+  </div>
+  <div align="center">
+    <img src="images/zero_result_2.png" width="800"/>
+  </div>
+  <br>
 
   On the previous benchmark dataset RSICD, Text2Earth surpasses the previous models with a significant improvement of +26.23 FID and +20.95% Zero-shot OA metric.
   <br>
