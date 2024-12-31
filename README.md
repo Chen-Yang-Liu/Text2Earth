@@ -39,16 +39,15 @@ Building on the Git-10M dataset, we developed Text2Earth, a 1.3 billion paramete
 
 - **Zero-Shot text2image generation**:
 Text2Earth can generate specific image content based on user-free text input, without scene-specific fine-tuning or retraining.
-  <br>
-  <div align="center">
-    <img src="images/text2multi-modal.png" width="800"/>
-  </div>
-  <br>
+  <video width="320" height="240" controls>
+  <source src="images/result.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
 
   On the previous benchmark dataset RSICD, Text2Earth surpasses the previous models with a significant improvement of +26.23 FID and +20.95% Zero-shot OA metric.
   <br>
   <div align="center">
-    <img src="images/RSICD_result.png" width="300"/>
+    <img src="images/RSICD_result.png" width="400"/>
   </div>
   <br>
 
@@ -56,7 +55,7 @@ Text2Earth can generate specific image content based on user-free text input, wi
 Using our Text2Earth, users can seamlessly and infinitely generate remote sensing images on a canvas, effectively overcoming the fixed-size limitations of traditional generative models. Text2Earth’s resolution controllability is the key to maintaining visual coherence across the generated scene during the expansion process.
     <br>
     <div align="center">
-      <img src="images/text2multi-modal.png" width="800"/>
+      <img src="images/unbound.png" width="800"/>
     </div>
     <br>
 
