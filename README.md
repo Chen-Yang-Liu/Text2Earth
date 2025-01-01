@@ -7,10 +7,17 @@
 **[Chenyang Liu](https://chen-yang-liu.github.io/), [Keyan Chen](https://kyanchen.github.io), [Rui Zhao](https://ruizhaocv.github.io/), [Zhengxia Zou](https://scholar.google.com.hk/citations?hl=en&user=DzwoyZsAAAAJ), and [Zhenwei Shi*✉](https://scholar.google.com.hk/citations?hl=en&user=kNhFWQIAAAAJ)**
 
 
-</div>
+[![Page](https://img.shields.io/badge/Project-Page-87CEEB)](https://chen-yang-liu.github.io/Text2Earth/)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org)
+
 <div align="center">
   <img src="images/overall.png" width="1000"/>
 </div>
+
+</div>
+
+
+[Arxiv](https://chen-yang-liu.github.io/)
 
 ## Share us a :star: if you're interested in this repo
 
@@ -89,7 +96,7 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
 ## Citation
 If you find this paper useful in your research, please consider citing:
 ```
-@ARTICLE{Liu_Change_Agent,
+@ARTICLE{xxxxxxxxxx,
   author={Liu, Chenyang and Chen, Keyan and Zhang, Haotian and Qi, Zipeng and Zou, Zhengxia and Shi, Zhenwei},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={Change-Agent: Toward Interactive Comprehensive Remote Sensing Change Interpretation and Analysis}, 
