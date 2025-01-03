@@ -17,8 +17,6 @@
 </div>
 
 
-[Arxiv](https://chen-yang-liu.github.io/)
-
 ## Share us a :star: if you're interested in this repo
 
 - Official repository of the paper: "**Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model**" 
