@@ -9,6 +9,7 @@
 
 [![Page](https://img.shields.io/badge/Project-Page-87CEEB)](https://chen-yang-liu.github.io/Text2Earth/)
 [![Paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2501.00895)
+[![YouTube](https://img.shields.io/badge/YouTube-Video-red.svg)](https://youtu.be/Rw9wzUpO01M)
 
 <div align="center">
   <img src="images/overall.png" width="1000"/>
