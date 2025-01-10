@@ -96,17 +96,12 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
 ## Citation
 If you find this paper useful in your research, please consider citing:
 ```
-@ARTICLE{xxxxxxxxxx,
-  author={Liu, Chenyang and Chen, Keyan and Zhang, Haotian and Qi, Zipeng and Zou, Zhengxia and Shi, Zhenwei},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Change-Agent: Toward Interactive Comprehensive Remote Sensing Change Interpretation and Analysis}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1-1},
-  keywords={Remote sensing;Feature extraction;Semantics;Transformers;Roads;Earth;Task analysis;Interactive Change-Agent;change captioning;change detection;multi-task learning;large language model},
-  doi={10.1109/TGRS.2024.3425815}}
-
+@article{liu2025text2earth,
+  title={Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model},
+  author={Liu, Chenyang and Chen, Keyan and Zhao, Rui and Zou, Zhengxia and Shi, Zhenwei},
+  journal={arXiv preprint arXiv:2501.00895},
+  year={2025}
+}
 ```
 
 ## License
