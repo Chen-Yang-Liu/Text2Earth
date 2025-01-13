@@ -31,7 +31,7 @@
 - [Text2Earth model](#Text2Earth-model)
 - [Citation](#Citation)
 
-## Git-10 dataset 
+## Git-10M dataset 
 - The Git-10M dataset is a global-scale remote sensing image-text pair dataset, consisting of 10 million image-text pairs with geographical locations and resolution information.
     <br>
     <div align="center">
