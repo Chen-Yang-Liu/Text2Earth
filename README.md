@@ -23,7 +23,8 @@
 - Official repository of the paper: "**Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model**" 
 - The dataset and model will be publicly available here.
 ## Latest Updates
-- 2025-02: The dataset and model will be publicly available.
+- 2025-04: The Model will be publicly available.
+- 2025-02-20: The dataset is available: [Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/).
 - 2025-01: The paper is **available**.
 
 ## Table of Contents
