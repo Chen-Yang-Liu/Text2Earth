@@ -1,6 +1,6 @@
 <div align="center">
  <h1>
-  <img src="images/logo.png" alt="Logo" width="47" height="30" style="margin-right: 10px;">
+<!--   <img src="images/logo.png" alt="Logo" width="47" height="30" style="margin-right: 10px;"> -->
   <a href="https://ieeexplore.ieee.org/document/10591792">Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model</a>
 </h1>
 
