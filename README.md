@@ -1,7 +1,7 @@
 <div align="center">
  <h1>
 <!--   <img src="images/logo.png" alt="Logo" width="47" height="30" style="margin-right: 10px;"> -->
-  <a href="https://ieeexplore.ieee.org/document/10591792">Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model</a>
+  <a href="https://ieeexplore.ieee.org/document/10988859">Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model</a>
 </h1>
 
 **[Chenyang Liu](https://chen-yang-liu.github.io/), [Keyan Chen](https://kyanchen.github.io), [Rui Zhao](https://ruizhaocv.github.io/), [Zhengxia Zou](https://scholar.google.com.hk/citations?hl=en&user=DzwoyZsAAAAJ), and [Zhenwei Shi*✉](https://scholar.google.com.hk/citations?hl=en&user=kNhFWQIAAAAJ)**
@@ -98,12 +98,16 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
 ## Citation
 If you find this paper useful in your research, please consider citing:
 ```
-@article{liu2025text2earth,
-  title={Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model},
+@ARTICLE{10988859,
   author={Liu, Chenyang and Chen, Keyan and Zhao, Rui and Zou, Zhengxia and Shi, Zhenwei},
-  journal={arXiv preprint arXiv:2501.00895},
-  year={2025}
-}
+  journal={IEEE Geoscience and Remote Sensing Magazine}, 
+  title={Text2Earth: Unlocking text-driven remote sensing image generation with a global-scale dataset and a foundation model}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={2-23},
+  keywords={Remote sensing;Image resolution;Image synthesis;Training;Foundation models;Diffusion models;Visualization;Spatial resolution;Noise reduction;Metadata},
+  doi={10.1109/MGRS.2025.3560455}}
 ```
 
 ## License
