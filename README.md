@@ -20,31 +20,117 @@
 
 ## Share us a :star: if you're interested in this repo
 
-- Official repository of the paper: "**Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model**" 
-- The dataset and model will be publicly available here.
+This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model**"](https://ieeexplore.ieee.org/document/10988859), accepted by **IEEE Geoscience and Remote Sensing Magazine**.
+
+
 ## Latest Updates
-- 2025-04: The paper has been accepted by **IEEE Geoscience and Remote Sensing Magazine**. The Text2Earth model is coming.
-- 2025-03-03: Our Git-RSCLIP model **available**: [[Huggingface](https://huggingface.co/lcybuaa/Git-RSCLIP) | [Modelscope](https://modelscope.cn/models/lcybuaa1111/Git-RSCLIP)]
-- 2025-02-20: The dataset is **available**: [[Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [[Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
-- 2025-01-01: The paper is **available**.
+✅ 2025-05-27: We are preparing training code and pre-trained model of Text2Earth.
+
+✅ 2025-04-16: The paper has been accepted by **IEEE Geoscience and Remote Sensing Magazine**.
+
+✅ 2025-03-03: Our **Git-RSCLIP** model **available**: [[🤗 Huggingface](https://huggingface.co/lcybuaa/Git-RSCLIP) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Git-RSCLIP)]
+
+✅ 2025-02-20: The **Git-10M** dataset is **available**: [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [🌊 Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
+
+✅ 2025-01-01: The paper is **available**.
 
 ## Table of Contents
-- [Git-10M dataset](#Git-10M-dataset)
-- [Text2Earth model](#Text2Earth-model)
-- [Citation](#Citation)
+- [🛰️ Git-10M Dataset](#Git-10M-Dataset)
+  - [Dataset Download](#Dataset-Download)
+  - [Visual Quality Enhancement](#Visual-Quality-Enhancement)
+- [🧩 Text2Earth Model](#Text2Earth-Model)
+  - [Pre-trained Weights](#Pre-trained-Weights)
+  - [Demo](#Demo)
+  - [Training](#Training)
+  - [Evaluation](#Evaluation)
+- [🍀 Git-RSCLIP Model](#Git-RSCLIP-Model)
+  - [Model Download](#Git-RSCLIP-Download)
+  - [Comparison](#Comparison)
+- [🖊️ Citation](#Citation)
 
-## Git-10M dataset 
-- The Git-10M dataset is a global-scale remote sensing image-text pair dataset, consisting of 10 million image-text pairs with geographical locations and resolution information.
+## 🛰️ Git-10M Dataset 
+### Dataset Download 
+- The Git-10M dataset is a **global-scale** dataset, consisting of **10.5 million** image-text pairs with geographical locations and resolution information.
+- The Git-10M dataset is **available** at: [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [🌊 Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
+
     <br>
     <div align="center">
       <img src="images/dataset.png" width="800"/>
     </div>
+    <br>
+
+### Visual Quality Enhancement
+- You can skip the following steps if you have higher visual quality requirements for the image. 
+- Some collected images exhibited poor visual quality, such as noise and artifact, which could negatively impact the training of image generation models. 
+To address this, you can use an image enhancement model pre-trained on my private high-quality remote sensing dataset to improving the overall image quality.
+
+    **Follow the steps below**:
+    <details open>
+
+    **Step 1**: Download our image enhancement model weights at: [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M)]
+
+    **Step 2**: Run Python code to process images:
+    ```python
+    cd ./Text2Earth/Tools
+    ```
+    ```python
+    python visual_quality_enhancement.py \
+        --input_dir /path/to/Git-10M/images \
+        --output_dir /path/to/Git-10M/enhanced_images \
+        --model_path /path/to/your/best_PSNR_iter_22000_new.pth
+    ```
+    
+    </details>
+
+
+
+## 🧩 Text2Earth model
+### Installation
+
+  <details open>
+
+  **Step 1**: Create a virtual environment named `Text2Earth_env` and activate it.
+  ```python
+  conda create -n Text2Earth_env python=3.9
+  conda activate Text2Earth_env
+  ```
+  
+  **Step 2**: Download or clone the repository.
+  ```python
+  git clone https://github.com/Chen-Yang-Liu/Text2Earth.git
+  cd ./Text2Earth
+  ```
+  
+  **Step 3**: Install dependencies.
+  ```python
+  pip install -r requirements.txt
+  ```
+  </details>
+
+### Pre-trained Weights
+Our pre-trained Text2Earth Download Link : [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [🌊 Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
+
+### 轻松迁移到现有的一些StableDiffusion2框架中
+Text2Earth可以被认为是遥感StableDiffusion
+
+### Demo
+
+### Training
+
+### Evaluation
+
+
+### Experimental Results 
+Building on the Git-10M dataset, we developed Text2Earth, a 1.3 billion parameter generative foundation model. Text2Earth excels in resolution-controllable text2image generation and demonstrates robust generalization and flexibility across multiple tasks.
+
+- **Comparison of Text2image models on the previous benchmark dataset (RSICD)**:
+
+  On the previous benchmark dataset RSICD, Text2Earth surpasses the previous models with a significant improvement of +26.23 FID and +20.95% Zero-shot OA metric.
+    <br>
     <div align="center">
-      <img src="images/text_3.png" width="800"/>
+      <img src="images/RSICD_result.png" width="400"/>
     </div>
     <br>
-## Text2Earth model
-Building on the Git-10M dataset, we developed Text2Earth, a 1.3 billion parameter generative foundation model. Text2Earth excels in resolution-controllable text2image generation and demonstrates robust generalization and flexibility across multiple tasks.
 
 - **Zero-Shot text2image generation**:
 Text2Earth can generate specific image content based on user-free text input, without scene-specific fine-tuning or retraining.
@@ -54,13 +140,6 @@ Text2Earth can generate specific image content based on user-free text input, wi
   </div>
   <div align="center">
     <img src="images/zero_result_2.png" width="800"/>
-  </div>
-  <br>
-
-  On the previous benchmark dataset RSICD, Text2Earth surpasses the previous models with a significant improvement of +26.23 FID and +20.95% Zero-shot OA metric.
-  <br>
-  <div align="center">
-    <img src="images/RSICD_result.png" width="400"/>
   </div>
   <br>
 
@@ -95,18 +174,21 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
       </div>
       <br>
 
-## Citation
+## 🖊️ Citation
 If you find this paper useful in your research, please consider citing:
 ```
-@article{liu2025text2earth,
-  title={Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model},
+@ARTICLE{10988859,
   author={Liu, Chenyang and Chen, Keyan and Zhao, Rui and Zou, Zhengxia and Shi, Zhenwei},
-  journal={arXiv preprint arXiv:2501.00895},
-  year={2025}
-}
+  journal={IEEE Geoscience and Remote Sensing Magazine}, 
+  title={Text2Earth: Unlocking text-driven remote sensing image generation with a global-scale dataset and a foundation model}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={2-23},
+  doi={10.1109/MGRS.2025.3560455}}
 ```
 
-## License
+## 📖 License
 This repo is distributed under [MIT License](https://github.com/Chen-Yang-Liu/Change-Agent/blob/main/LICENSE.txt). The code can be used for academic purposes only.
 
 [//]: # (## Contact Us)
