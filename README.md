@@ -46,7 +46,7 @@ This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven 
 - [🍀 Git-RSCLIP Model](#Git-RSCLIP-Model)
   - [Model Download](#Git-RSCLIP-Download)
   - [Comparison](#Comparison)
-- [🖊️ Citation](#Citation)
+- [✍️ Citation](#Citation)
 
 ## 🛰️ Git-10M Dataset 
 ### Dataset Download 
@@ -67,17 +67,16 @@ To address this, you can use an image enhancement model pre-trained on my privat
     **Follow the steps below**:
     <details open>
 
-    **Step 1**: Download our image enhancement model weights at: [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M)]
-
-    **Step 2**: Run Python code to process images:
+    **Step 1**: 
     ```python
     cd ./Text2Earth/Tools
     ```
+    **Step 2**: Run Python code to process images:
+    
     ```python
     python visual_quality_enhancement.py \
         --input_dir /path/to/Git-10M/images \
-        --output_dir /path/to/Git-10M/enhanced_images \
-        --model_path /path/to/your/best_PSNR_iter_22000_new.pth
+        --output_dir /path/to/Git-10M/enhanced_images
     ```
     
     </details>
@@ -89,31 +88,35 @@ To address this, you can use an image enhancement model pre-trained on my privat
 
   <details open>
 
-  **Step 1**: Create a virtual environment named `Text2Earth_env` and activate it.
-  ```python
-  conda create -n Text2Earth_env python=3.9
-  conda activate Text2Earth_env
-  ```
-  
-  **Step 2**: Download or clone the repository.
+  **Step 1**: Download or clone the repository.
   ```python
   git clone https://github.com/Chen-Yang-Liu/Text2Earth.git
   cd ./Text2Earth
   ```
-  
-  **Step 3**: Install dependencies.
+  **Step 2**: Create a virtual environment named `Text2Earth_env` and activate it.
   ```python
-  pip install -r requirements.txt
+  conda create -n Text2Earth_env python=3.9
+  conda activate Text2Earth_env
+  ```
+
+  **Step 3**: Install ``accelerate`` then run ``accelerate config``
+
+  **Step 4**: Our Text2Earth is based on [Diffuser](https://huggingface.co/docs/diffusers/installation). Now install Text2Earth:
+  ```python
+  cd ./Text2Earth
+  pip install -e ".[torch]"
   ```
   </details>
 
-### Pre-trained Weights
-Our pre-trained Text2Earth Download Link : [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [🌊 Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
+### Pre-trained Weights and Demo
+Our pre-trained Text2Earth Download Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth)].
 
-### 轻松迁移到现有的一些StableDiffusion2框架中
-Text2Earth可以被认为是遥感StableDiffusion
 
 ### Demo
+
+### 可以轻松迁移到现有的一些StableDiffusion2框架中
+Text2Earth可以被认为是遥感StableDiffusion
+
 
 ### Training
 
@@ -174,7 +177,7 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
       </div>
       <br>
 
-## 🖊️ Citation
+## ✍️️ Citation
 If you find this paper useful in your research, please consider citing:
 ```
 @ARTICLE{10988859,
