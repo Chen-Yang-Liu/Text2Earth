@@ -1,0 +1,25 @@
+Collecting invisible-watermark
+  Downloading invisible_watermark-0.2.0-py3-none-any.whl.metadata (8.2 kB)
+Requirement already satisfied: Pillow>=6.0.0 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from invisible-watermark) (10.3.0)
+Collecting PyWavelets>=1.1.1 (from invisible-watermark)
+  Downloading pywavelets-1.6.0-cp39-cp39-win_amd64.whl.metadata (9.0 kB)
+Requirement already satisfied: numpy>=1.17.0 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from invisible-watermark) (1.24.3)
+Requirement already satisfied: opencv-python>=4.1.0.25 in c:\users\lcy\appdata\roaming\python\python39\site-packages (from invisible-watermark) (4.8.0.74)
+Requirement already satisfied: torch in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from invisible-watermark) (2.3.1)
+Requirement already satisfied: filelock in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (4.11.0)
+Requirement already satisfied: sympy in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (1.12)
+Requirement already satisfied: networkx in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (3.2.1)
+Requirement already satisfied: jinja2 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (3.1.4)
+Requirement already satisfied: fsspec in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from torch->invisible-watermark) (2024.3.1)
+Requirement already satisfied: mkl<=2021.4.0,>=2021.1.1 in c:\users\lcy\appdata\roaming\python\python39\site-packages (from torch->invisible-watermark) (2021.4.0)
+Requirement already satisfied: intel-openmp==2021.* in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from mkl<=2021.4.0,>=2021.1.1->torch->invisible-watermark) (2021.4.0)
+Requirement already satisfied: tbb==2021.* in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from mkl<=2021.4.0,>=2021.1.1->torch->invisible-watermark) (2021.12.0)
+Requirement already satisfied: MarkupSafe>=2.0 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from jinja2->torch->invisible-watermark) (2.1.3)
+Requirement already satisfied: mpmath>=0.19 in d:\programdata\anaconda3\envs\diffuser\lib\site-packages (from sympy->torch->invisible-watermark) (1.3.0)
+Downloading invisible_watermark-0.2.0-py3-none-any.whl (1.6 MB)
+   ---------------------------------------- 1.6/1.6 MB 3.6 MB/s eta 0:00:00
+Downloading pywavelets-1.6.0-cp39-cp39-win_amd64.whl (4.3 MB)
+   ---------------------------------------- 4.3/4.3 MB 30.1 MB/s eta 0:00:00
+Installing collected packages: PyWavelets, invisible-watermark
+Successfully installed PyWavelets-1.6.0 invisible-watermark-0.2.0

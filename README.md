@@ -41,6 +41,7 @@ This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven 
 - [🧩 Text2Earth Model](#Text2Earth-Model)
   - [Pre-trained Weights](#Pre-trained-Weights)
   - [Demo](#Demo)
+  - [Installation](#Installation)
   - [Training](#Training)
   - [Evaluation](#Evaluation)
 - [🍀 Git-RSCLIP Model](#Git-RSCLIP-Model)
@@ -84,6 +85,136 @@ To address this, you can use an image enhancement model pre-trained on my privat
 
 
 ## 🧩 Text2Earth model
+### Pre-trained Weights
+We provide two versions of the model:
+- ``Text2Earth`` Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth)].
+- ``Text2Earth-inpainting`` Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth-inpainting) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth-inpainting)].
+
+###  Demo/Usage:
+✅ **Loading Usage 1**: Use Text2Earth directly through [[🤗 Diffuser]](https://huggingface.co/docs/diffusers/index) without installing our repository.
+<details open>
+
+  - ``Text2Earth`` that generates remote sensing images from text prompts:
+  
+    ```python
+    import torch
+    from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
+    
+    model_id = "lcybuaa/Text2Earth"
+    # Running the pipeline (if you don't swap the scheduler it will run with the default DDIM, in this example we are swapping it to DPMSolverMultistepScheduler):
+    scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
+    pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16, scheduler=scheduler, 
+                                             custom_pipeline="pipeline_text2earth_diffusion", safety_checker=None)
+    pipe = pipe.to("cuda")
+    prompt = "Seven green circular farmlands are neatly arranged on the ground"
+    image = pipe(prompt,
+                 height=256,
+                 width=256,
+                 num_inference_steps=50, 
+                 guidance_scale=4.0).images[0]
+    
+    image.save("circular.png")
+    ```
+  - ``Text2Earth-inpainting`` that inpaints remote sensing images based on text prompts and inpainting masks:
+    ```python
+    import torch
+    from diffusers import StableDiffusionInpaintPipeline
+    from diffusers.utils import load_image
+    
+    model_id = "lcybuaa/Text2Earth-inpainting"
+    pipe = StableDiffusionInpaintPipeline.from_pretrained(
+            model_id, torch_dtype=torch.float16, 
+            custom_pipeline='pipeline_text2earth_diffusion_inpaint',
+            safety_checker=None
+        )
+    pipe.to("cuda")
+    
+    # load base and mask image
+    # image and mask_image should be PIL images.
+    # The mask structure is white for inpainting and black for keeping as is
+    init_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.jpg")
+    mask_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.png")
+    
+    prompt = "There is one big green lake"
+    image = pipe(prompt=prompt,
+                     image=init_image,
+                     mask_image=mask_image,
+                     height=256,
+                     width=256,
+                     num_inference_steps=50,
+                     guidance_scale=4.0).images[0]
+    image.save("lake.png")
+    ```
+</details>
+
+✅ **Loading Usage 2**: Install our repository (See [Installation](#Installation)), then you can use the provided Pipeline, which is more convenient for users to customize and edit.
+<details open>
+
+  - ``Text2Earth`` that generates remote sensing images from text prompts:
+  
+    ```python
+    import torch
+    from diffusers import Text2EarthDiffusionPipeline, EulerDiscreteScheduler
+    
+    model_id = "lcybuaa/Text2Earth"
+    # Running the pipeline (if you don't swap the scheduler it will run with the default DDIM, in this example we are swapping it to DPMSolverMultistepScheduler):
+    scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
+    pipe = Text2EarthDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16, scheduler=scheduler, 
+                                             safety_checker=None)
+    pipe = pipe.to("cuda")
+    prompt = "Seven green circular farmlands are neatly arranged on the ground"
+    image = pipe(prompt,
+                 height=256,
+                 width=256,
+                 num_inference_steps=50, 
+                 guidance_scale=4.0).images[0]
+    
+    image.save("circular.png")
+    ```
+  - ``Text2Earth-inpainting`` that inpaints remote sensing images based on text prompts and inpainting masks:
+    ```python
+    import torch
+    from diffusers import Text2EarthDiffusionInpaintPipeline
+    from diffusers.utils import load_image
+    
+    model_id = "lcybuaa/Text2Earth-inpainting"
+    pipe = Text2EarthDiffusionInpaintPipeline.from_pretrained(
+            model_id, torch_dtype=torch.float16, 
+            custom_pipeline='pipeline_text2earth_diffusion_inpaint',
+            safety_checker=None
+        )
+    pipe.to("cuda")
+    
+    # load base and mask image
+    # image and mask_image should be PIL images.
+    # The mask structure is white for inpainting and black for keeping as is
+    init_image = load_image(r"./Text2Earth/images/sparse_residential_310.jpg")
+    mask_image = load_image(r"./Text2Earth/images/sparse_residential_310.png")
+    
+    prompt = "There is one big green lake"
+    image = pipe(prompt=prompt,
+                     image=init_image,
+                     mask_image=mask_image,
+                     height=256,
+                     width=256,
+                     num_inference_steps=50,
+                     guidance_scale=4.0).images[0]
+    image.save("lake.png")
+    ```
+</details>
+
+✅ NOTE: ``Text2Earth`` and ``Text2Earth-inpainting`` allow users to **specify the spatial resolution** of the generated images, ranging from 0.5m to 128m per pixel. 
+This can be achieved by including specific identifiers in the prompt.
+```python
+# You can indirectly set the spatial resolution by specifying the Google_Map_Level, which ranges from [10, 18], corresponding to resolutions from [128m, 0.5m]. 
+# The conversion formula is: **Resolution = 2^(17 - Level)**.
+Google_Map_Level = 1 # Resolution = 2**(17-Level)
+content_prompt = "Seven green circular farmlands are neatly arranged on the ground"
+prompt_with_resolution = '{res}_GOOGLE_LEVEL_' + content_prompt
+pipe = xxx #  Text2EarthDiffusionPipeline or Text2EarthDiffusionInpaintPipeline
+image = pipe(prompt=prompt_with_resolution, ...).images[0]
+```
+
 ### Installation
 
   <details open>
@@ -108,20 +239,27 @@ To address this, you can use an image enhancement model pre-trained on my privat
   ```
   </details>
 
-### Pre-trained Weights and Demo
-Our pre-trained Text2Earth Download Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth)].
 
 
-### Demo
+[//]: # (# If you set it to set the spatial resolution of generated images, e.g., 0.5, 1, 2,...,128.)
 
-### 可以轻松迁移到现有的一些StableDiffusion2框架中
-Text2Earth可以被认为是遥感StableDiffusion
+[//]: # (# None, the model will use the default resolution of 256.)
+
+[//]: # (Resolution = None # )
+
+[//]: # (if Resolution is not None:)
+
+[//]: # (    res_prompt = '{Resolution}_GOOGLE_LEVEL_')
+
+[//]: # (else:)
+
+[//]: # (    res_prompt = prompt)
 
 
 ### Training
-
+Code is coming soon.
 ### Evaluation
-
+Code is coming soon.
 
 ### Experimental Results 
 Building on the Git-10M dataset, we developed Text2Earth, a 1.3 billion parameter generative foundation model. Text2Earth excels in resolution-controllable text2image generation and demonstrates robust generalization and flexibility across multiple tasks.
