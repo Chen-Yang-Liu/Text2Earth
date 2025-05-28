@@ -40,7 +40,7 @@ This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven 
   - [Visual Quality Enhancement](#Visual-Quality-Enhancement)
 - [🧩 Text2Earth Model](#Text2Earth-Model)
   - [Pre-trained Weights](#Pre-trained-Weights)
-  - [Demo](#Demo)
+  - [Demo/Usage](#Demo/Usage)
   - [Installation](#Installation)
   - [Training](#Training)
   - [Evaluation](#Evaluation)
@@ -49,8 +49,8 @@ This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven 
   - [Comparison](#Comparison)
 - [✍️ Citation](#Citation)
 
-## 🛰️ Git-10M Dataset 
-### Dataset Download 
+## 🛰️ Git-10M Dataset
+### Dataset Download
 - The Git-10M dataset is a **global-scale** dataset, consisting of **10.5 million** image-text pairs with geographical locations and resolution information.
 - The Git-10M dataset is **available** at: [[🤗 Huggingface](https://huggingface.co/datasets/lcybuaa/Git-10M) | [🌊 Modelscope](https://modelscope.cn/datasets/lcybuaa1111/Git-10M/)].
 
@@ -84,7 +84,7 @@ To address this, you can use an image enhancement model pre-trained on my privat
 
 
 
-## 🧩 Text2Earth model
+## 🧩 Text2Earth Model
 ### Pre-trained Weights
 We provide two versions of the model:
 - ``Text2Earth`` Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth)].
@@ -312,6 +312,16 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
   <br>
       <div align="center">
         <img src="images/cross_transf.png" width="800"/>
+      </div>
+      <br>
+
+
+## 🍀 Git-RSCLIP Model
+  - Model Download:  [[🤗 Huggingface](https://huggingface.co/lcybuaa/Git-RSCLIP) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Git-RSCLIP)]
+  - Comparison with other CLIP in Remote Sensing:
+      <br>
+      <div align="center">
+        <img src="images/Git-RSCLIP.png" width="800"/>
       </div>
       <br>
 
