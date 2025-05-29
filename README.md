@@ -40,7 +40,7 @@ This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven 
   - [Visual Quality Enhancement](#Visual-Quality-Enhancement)
 - [🧩 Text2Earth Model](#Text2Earth-Model)
   - [Pre-trained Weights](#Pre-trained-Weights)
-  - [Demo/Usage](#Demo/Usage)
+  - [Demo-Usage](#Demo-Usage)
   - [Installation](#Installation)
   - [Training](#Training)
   - [Evaluation](#Evaluation)
@@ -81,14 +81,13 @@ To address this, you can use an image enhancement model pre-trained on my privat
     </details>
 
 
-
 ## 🧩 Text2Earth Model <a id="Text2Earth-Model"></a>
 ### Pre-trained Weights
 We provide two versions of the model:
 - ``Text2Earth`` Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth)].
 - ``Text2Earth-inpainting`` Link : [[🤗 Huggingface](https://huggingface.co/lcybuaa/Text2Earth-inpainting) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Text2Earth-inpainting)].
 
-###  Demo/Usage:
+###  Demo-Usage:
 ✅ **Loading Usage 1**: Use Text2Earth directly through [[🤗 Diffuser]](https://huggingface.co/docs/diffusers/index) without installing our repository.
 <details open>
 
@@ -206,7 +205,7 @@ This can be achieved by including specific identifiers in the prompt.
 ```python
 # You can indirectly set the spatial resolution by specifying the Google_Map_Level, which ranges from [10, 18], corresponding to resolutions from [128m, 0.5m]. 
 # The conversion formula is: **Resolution = 2^(17 - Level)**.
-Google_Map_Level = 1 # Resolution = 2**(17-Level)
+Google_Map_Level = 16 # Resolution = 2**(17-Level)
 content_prompt = "Seven green circular farmlands are neatly arranged on the ground"
 prompt_with_resolution = '{res}_GOOGLE_LEVEL_' + content_prompt
 pipe = xxx #  Text2EarthDiffusionPipeline or Text2EarthDiffusionInpaintPipeline
@@ -343,3 +342,4 @@ This repo is distributed under [MIT License](https://github.com/Chen-Yang-Liu/Ch
 [//]: # (## Contact Us)
 
 [//]: # (If you have any other questions❓, please contact us in time 👬)
+
