@@ -314,13 +314,8 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
 
 
 ## 🍀 Git-RSCLIP Model <a id="Git-RSCLIP-Model"></a>
-  - Model Download:  [[🤗 Huggingface](https://huggingface.co/lcybuaa/Git-RSCLIP) | [🌊 Modelscope](https://modelscope.cn/models/lcybuaa1111/Git-RSCLIP)]
-  - Comparison with other CLIP in Remote Sensing:
-      <br>
-      <div align="center">
-        <img src="images/Git-RSCLIP.png" width="800"/>
-      </div>
-      <br>
+   - The Git-RSCLIP model is a remote sensing image-text foundation model, which is trained on the Git-10M dataset.
+   - For more details, please see the github repository: [[Github](https://github.com/Chen-Yang-Liu/Git-RSCLIP)]
 
 ## ✍️️ Citation
 If you find this paper useful in your research, please consider citing:
