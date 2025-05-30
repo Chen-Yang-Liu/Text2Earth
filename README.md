@@ -307,10 +307,10 @@ Text2Earth can be used for Text-Driven Multi-modal Image Generation, including R
 
   Text2Earth also exhibits potential in Image-to-Image Translation, containing cross-modal translation and image enhancement, such as PAN to RGB (PAN2RGB), NIR to RGB (NIR2RGB), PAN to NIR (PAN2NIR), super-resolution, and image dehazing.
   <br>
-      <div align="center">
-        <img src="images/cross_transf.png" width="800"/>
-      </div>
-      <br>
+  <div align="center">
+    <img src="images/cross_transf.png" width="800"/>
+  </div>
+  <br>
 
 
 ## 🍀 Git-RSCLIP Model <a id="Git-RSCLIP-Model"></a>
