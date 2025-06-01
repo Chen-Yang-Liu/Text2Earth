@@ -23,8 +23,8 @@
 This is official repository of the paper: ["**Text2Earth: Unlocking Text-driven Remote Sensing Image Generation with a Global-Scale Dataset and a Foundation Model**"](https://ieeexplore.ieee.org/document/10988859), accepted by **IEEE Geoscience and Remote Sensing Magazine**.
 
 
-## Latest Updates
-✅ 2025-05-27: We are preparing training code and pre-trained model of Text2Earth.
+## ## News 🔥
+✅ 2025.06.01: **Git-RSCLIP** series downloads exceeded **60,000** times 🔥
 
 ✅ 2025-04-16: The paper has been accepted by **IEEE Geoscience and Remote Sensing Magazine**.
 
