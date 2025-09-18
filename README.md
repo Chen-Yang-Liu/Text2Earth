@@ -178,6 +178,7 @@ We provide two versions of the model:
     pipe = Text2EarthDiffusionInpaintPipeline.from_pretrained(
             model_id, torch_dtype=torch.float16, 
             custom_pipeline='pipeline_text2earth_diffusion_inpaint',
+            trust_remote_code=True,
             safety_checker=None
         )
     pipe.to("cuda")
@@ -185,8 +186,8 @@ We provide two versions of the model:
     # load base and mask image
     # image and mask_image should be PIL images.
     # The mask structure is white for inpainting and black for keeping as is
-    init_image = load_image(r"https://github.com/Chen-Yang-Liu/Text2Earth/blob/main/images/sparse_residential_310.jpg")
-    mask_image = load_image(r"https://github.com/Chen-Yang-Liu/Text2Earth/blob/main/images/sparse_residential_310.png")
+    init_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.jpg")
+    mask_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.png")
     
     prompt = "There is one big green lake"
     image = pipe(prompt=prompt,
@@ -198,6 +199,14 @@ We provide two versions of the model:
                      guidance_scale=4.0).images[0]
     image.save("lake.png")
     ```
+
+    **Generated ``lake.png``** as follows:
+      <br>
+      <div align="center">
+        <img src="images/lake.png" width="200"/>
+      </div>
+      <br>
+
 </details>
 
 ✅ NOTE: ``Text2Earth`` and ``Text2Earth-inpainting`` allow users to **specify the spatial resolution** of the generated images, ranging from 0.5m to 128m per pixel. 
