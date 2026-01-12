@@ -211,12 +211,13 @@ We provide two versions of the model:
 
 ✅ NOTE: ``Text2Earth`` and ``Text2Earth-inpainting`` allow users to **specify the spatial resolution** of the generated images, ranging from 0.5m to 128m per pixel. 
 This can be achieved by including specific identifiers in the prompt.
+
 ```python
 # You can indirectly set the spatial resolution by specifying the Google_Map_Level, which ranges from [10, 18], corresponding to resolutions from [128m, 0.5m]. 
 # The conversion formula is: **Resolution = 2^(17 - Level)**.
 Google_Map_Level = 16 # Resolution = 2**(17-Level)
 content_prompt = "Seven green circular farmlands are neatly arranged on the ground"
-prompt_with_resolution = '{res}_GOOGLE_LEVEL_' + content_prompt
+prompt_with_resolution = f'{Google_Map_Level}_GOOGLE_LEVEL_' + content_prompt
 pipe = xxx #  Text2EarthDiffusionPipeline or Text2EarthDiffusionInpaintPipeline
 image = pipe(prompt=prompt_with_resolution, ...).images[0]
 ```
