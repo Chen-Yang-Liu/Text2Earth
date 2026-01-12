@@ -108,7 +108,7 @@ We provide two versions of the model:
                  height=256,
                  width=256,
                  num_inference_steps=50, 
-                 guidance_scale=4.0).images[0]
+                 guidance_scale=3.5).images[0]
     
     image.save("circular.png")
     ```
@@ -139,7 +139,7 @@ We provide two versions of the model:
                      height=256,
                      width=256,
                      num_inference_steps=50,
-                     guidance_scale=4.0).images[0]
+                     guidance_scale=3.5).images[0]
     image.save("lake.png")
     ```
 </details>
@@ -164,7 +164,7 @@ We provide two versions of the model:
                  height=256,
                  width=256,
                  num_inference_steps=50, 
-                 guidance_scale=4.0).images[0]
+                 guidance_scale=3.5).images[0]
     
     image.save("circular.png")
     ```
@@ -196,7 +196,7 @@ We provide two versions of the model:
                      height=256,
                      width=256,
                      num_inference_steps=50,
-                     guidance_scale=4.0).images[0]
+                     guidance_scale=3.5).images[0]
     image.save("lake.png")
     ```
 
