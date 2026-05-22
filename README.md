@@ -129,8 +129,8 @@ We provide two versions of the model:
     # load base and mask image
     # image and mask_image should be PIL images.
     # The mask structure is white for inpainting and black for keeping as is
-    init_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.jpg")
-    mask_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.png")
+    init_image = load_image(r"./images/sparse_residential_310.jpg")
+    mask_image = load_image(r"./images/sparse_residential_310.png")
     
     prompt = "There is one big green lake"
     image = pipe(prompt=prompt,
@@ -186,8 +186,8 @@ We provide two versions of the model:
     # load base and mask image
     # image and mask_image should be PIL images.
     # The mask structure is white for inpainting and black for keeping as is
-    init_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.jpg")
-    mask_image = load_image(r"./Text2Earth/examples/text_to_image/inpainting/sparse_residential_310.png")
+    init_image = load_image(r"./images/sparse_residential_310.jpg")
+    mask_image = load_image(r"./images/sparse_residential_310.png")
     
     prompt = "There is one big green lake"
     image = pipe(prompt=prompt,
